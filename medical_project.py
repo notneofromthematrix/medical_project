@@ -2,8 +2,11 @@
 
 import csv
 
-with open('insurance.csv') as records_csv:
-    output = records_csv.read()
+with open('insurance.csv', newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    data = [row for row in reader]
+    for row in data:
+        print(row)
 
-print(output)
+
 
